@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Dash 팬 페이지</title>
+<style>
+    body {
+        background: linear-gradient(135deg, #1a0033 0%, #2d0a4e 50%, #1a0033 100%);
+        color: aquamarine;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        text-align: center;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 40px;
+        border-radius: 20px;
+        border: 3px solid deeppink;
+        max-width: 600px;
+        width: 100%;
+    }
+
+    h1 {
+        background: linear-gradient(135deg, #00d4ff, deeppink, #ffff00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-size: 48px;
+        margin: 0 0 15px 0;
+        text-shadow: none;
+        animation: gradient-pulse 3s ease-in-out infinite;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    @keyframes gradient-pulse {
+        0%, 100% {
+            transform: scale(1);
+            filter: brightness(1);
+        }
+        50% {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+    }
+
+    .subtitle {
+        font-size: 16px;
+        color: #00d4ff;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        opacity: 0.9;
+    }
+
+    .spiky-text {
+        font-size: 36px;
+        color: #00d4ff;
+        font-weight: bold;
+        margin: 25px 0;
+        text-shadow: 0 0 15px #00d4ff, 0 0 30px rgba(0, 212, 255, 0.5);
+        letter-spacing: 3px;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    .spiky-text:hover {
+        text-shadow: 0 0 25px #00d4ff, 0 0 40px rgba(0, 212, 255, 0.8);
+        transform: scale(1.1);
+    }
+
+    .highlight {
+        background: linear-gradient(135deg, rgba(255, 255, 0, 0.2), rgba(255, 105, 180, 0.2));
+        color: #ffff00;
+        font-size: 24px;
+        font-weight: bold;
+        margin: 25px 0;
+        padding: 15px;
+        border-radius: 12px;
+        text-shadow: 0 0 15px #ffff00;
+        border: 2px solid #ffff00;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .highlight:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(255, 255, 0, 0.3);
+    }
+
+    p {
+        font-size: 18px;
+        margin: 15px 0;
+        line-height: 1.8;
+        color: #e0e0e0;
+        transition: all 0.3s ease;
+    }
+
+    .level-info {
+        background: linear-gradient(135deg, rgba(255, 0, 0, 0.15), rgba(255, 105, 180, 0.15));
+        border: 3px solid #ff0000;
+        padding: 25px;
+        margin: 25px 0;
+        border-radius: 15px;
+        color: #ff6b6b;
+        font-weight: bold;
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .level-info::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150%;
+        height: 50%;
+        background: linear-gradient(125deg, transparent, rgba(255, 0, 0, 0.6), transparent);
+        transition: transform 0.7s ease;
+        transform: translate(100%, -100%) rotate(70deg);
+        pointer-events: none;
+    }
+
+    .level-info:hover {
+        box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+        transform: scale(1.02);
+    }
+
+    .level-info:hover::before {
+        transform: translate(-100%, 100%) rotate(70deg);
+    }
+
+    .info-card {
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(100, 200, 255, 0.1));
+        border: 2px solid #00d4ff;
+        padding: 25px;
+        margin: 25px 0;
+        border-radius: 15px;
+        color: #00d4ff;
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        transition: all 0.3s ease;
+        line-height: 1.8;
+    }
+
+    .info-card:hover {
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+        transform: scale(1.02);
+    }
+
+    .info-card strong {
+        color: #ffff00;
+        text-shadow: 0 0 10px #ffff00;
+    }
+
+    /* 태블릿 (768px 이하) */
+    @media (max-width: 768px) {
+        .container {
+            padding: 30px;
+            border: 2px solid deeppink;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+        }
+
+        .spiky-text {
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        .highlight {
+            font-size: 20px;
+            padding: 12px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .level-info {
+            padding: 18px;
+            font-size: 14px;
+        }
+
+        .info-card {
+            padding: 18px;
+            font-size: 14px;
+        }
+    }
+
+    /* 모바일 (480px 이하) */
+    @media (max-width: 480px) {
+        body {
+            padding: 10px;
+        }
+
+        .container {
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid deeppink;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .spiky-text {
+            font-size: 22px;
+            margin: 15px 0;
+            letter-spacing: 2px;
+        }
+
+        .highlight {
+            font-size: 18px;
+            margin: 15px 0;
+            padding: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        .level-info {
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 12px;
+            border: 2px solid #ff0000;
+        }
+
+        .info-card {
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 12px;
+            border: 2px solid #00d4ff;
+        }
+
+        .emoji-row {
+            font-size: 28px !important;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>DASH INTO RHYTHM</h1>
+        <div class="subtitle">🎮 기하학 대시 열성가 🎮</div>
+
+        <div class="info-card">
+            <strong>🎮 Geometry Dash란?</strong><br>
+            음악의 리듬에 맞춰 큐브를 조종하며 장애물을 피하고 점프하는 <strong>플랫폼 게임</strong>입니다! 🎵
+            간단해 보이지만 엄청 어려운 레벨들이 있어서 전 세계 수많은 플레이어들이 중독되어 있죠. ⚡
+        </div>
+
+        <p>저는 <span class="spiky-text">Geometry Dash</span>를 진짜 너무 좋아합니다!</p>
+
+        <div class="highlight">
+            ✨ Geometry Dash를 사랑하는 사람 ✨
+        </div>
+
+        <div class="level-info">
+            ⚠️ 가장 어려운 레벨: <strong>CLUBSTEP</strong> ⚠️<br>
+            <span style="font-size: 14px; margin-top: 8px; display: block;">스파이크 | 회전 | 피하기 ⚡</span>
+        </div>
+
+        <p>Geometry Dash는 제 인생의 일부입니다. <span style="color: #ffff00;">(사실 아닙니다)</span></p>
+        <p>매일매일 레벨을 깨려고 노력하고 있어요! 💪</p>
+
+        <div class="emoji-row" style="margin-top: 30px;">
+            🟦 ⬛ 🟦 ⬛ 🟦
+        </div>
+    </div>
+</body>
+</html>
